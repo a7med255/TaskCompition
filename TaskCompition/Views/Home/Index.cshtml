@@ -1,0 +1,68 @@
+﻿@using TaskCompition.Resources
+@model User;
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Form To Select 5 persons Randomly to Win the Compition </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-md-8 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Register in the form</h4>
+                    <p class="card-description"> Enter Your Data </p>
+                    <form class="forms-sample" method="post" enctype="multipart/form-data"
+                          asp-controller="Home" asp-action="Save" role="form">
+                        <input asp-for="Id" type="hidden" />
+                        <div class="form-group">    
+                            <label for="exampleInputUsername1">@ResGeneral.lblName</label>
+                            <input asp-for="Name" type="text" class="form-control" placeholder="Name">
+                            <span asp-validation-for="Name"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">@ResGeneral.lblEmail</label>
+                            <input asp-for="Email" type="email" class="form-control" placeholder="Email">
+                            <span asp-validation-for="Email"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">@ResGeneral.lblPhone</label>
+                            <input asp-for="phone" type="number" class="form-control" placeholder="Phone">
+                            <span asp-validation-for="phone"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">
+                                @ResAdmin.lblImage
+                            </label>
+                            <input asp-for="Image" type="file" name="Files"
+                                   class="form-control" placeholder="@ResAdmin.lblImage"
+                                   onchange="Upload.UploadDefaultImg(event)" accept=".jpg, .jpeg, .png, ,.gif">
+
+                        </div>
+
+                        <button type="submit" formmethod="post" class="btn btn-gradient-primary me-2">@ResGeneral.lblSave</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <span id="tbImgName"></span>
+                    <div id="tbImgSrc">
+                        <img src="/Uploads/@Model.Image" style="width:95%; height:300px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

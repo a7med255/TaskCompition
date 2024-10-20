@@ -1,0 +1,18 @@
+﻿@model User
+
+<div class="product-details">
+    <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <span id="tbImgName"></span>
+                <div id="tbImgSrc">
+                    <img src="/Uploads/@Model.Image" style="width:95%; height:300px;" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>    Name: @Model.Name</h2>
+    <h4>    Email: @Model.Email</h4>
+    <h5>    Phone: @Model.phone</h5>
+    <a href="/Admin/Home/List">Back to Users List</a>
+</div>

@@ -1,0 +1,32 @@
+﻿
+
+
+<div class="col-12">
+    <table id="order-listing" class="table table-hover">
+        <thead>
+            <tr>
+                <th>@ResGeneral.lblImage</th>
+                <th>@ResGeneral.lblName</th>
+                <th>@ResGeneral.lblEmail</th>
+                <th>@ResGeneral.lblPhone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cat in ViewBag.lstUser)
+            {
+                <tr style="margin:0px;padding:0px;">
+                    <td class="col-md-4">
+                        <img src="/Uploads/@cat.Image" />
+                    </td>
+                    <td class="col-md-4">@cat.Name</td>
+                    <td class="col-md-4">@cat.Email</td>
+                    <td class="col-md-8">@cat.phone</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+                  
+
+
